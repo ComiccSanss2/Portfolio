@@ -40,24 +40,26 @@
         --shadow-glow: 0 0 35px rgba(99, 102, 241, 0.35);
       }
 
-
-
-      
-
-      * {
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-      }
-
       body {
         margin: 0;
         font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         background: radial-gradient(circle at top, #111827 0, #020617 45%, #020617 100%);
         color: var(--text);
         overflow-x: hidden;
+        transition: background 0.2s ease, color 0.2s ease;
       }
 
-      /* Scrollbar */
+      body.light-mode {
+        --bg: #f3f4f6;
+        --bg-alt: #ffffff;
+        --text: #0f172a;
+        --muted: #6b7280;
+        --card: #ffffff;
+        --border: rgba(148, 163, 184, 0.7);
+        background: radial-gradient(circle at top, #e5e7eb 0, #f9fafb 45%, #f3f4f6 100%);
+        color: var(--text);
+      }
+
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -72,7 +74,10 @@
         background: #4b5563;
       }
 
-      /* Layout */
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
 
       .app-root {
         min-height: 100vh;
@@ -98,12 +103,22 @@
         );
         border-bottom: 1px solid rgba(15, 23, 42, 0.9);
       }
+      body.light-mode header {
+        background: linear-gradient(
+          to bottom,
+          rgba(249, 250, 251, 0.94),
+          rgba(249, 250, 251, 0.8),
+          transparent
+        );
+        border-bottom: 1px solid rgba(209, 213, 219, 0.8);
+      }
 
       .nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0.9rem 0;
+        gap: 1rem;
       }
 
       .nav-left {
@@ -125,6 +140,10 @@
         font-size: 1rem;
         box-shadow: var(--shadow-soft);
       }
+      body.light-mode .nav-logo {
+        background: radial-gradient(circle at 20% 0, #22c55e 0, #e5e7eb 40%, #ffffff 80%);
+        border-color: rgba(148, 163, 184, 0.9);
+      }
 
       .nav-title {
         display: flex;
@@ -145,45 +164,41 @@
 
       .nav-links {
         display: flex;
-        gap: 1.3rem;
+        gap: 0.7rem;
         font-size: 0.85rem;
+        align-items: center;
       }
 
-  .nav-link {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
-  background: transparent;
-}
-
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        inset-inline: 0;
-        bottom: 0;
-        height: 2px;
+      .nav-link {
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0.4rem 0.9rem;
         border-radius: 999px;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.2s ease-out;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        font-size: 0.8rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+        background: transparent;
+        cursor: pointer;
       }
 
-   .nav-link:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(148, 163, 184, 0.35);
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
-  transform: translateY(-1px);
-}
-      .nav-link:hover::after {
-        transform: scaleX(1);
+      .nav-link:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(148, 163, 184, 0.35);
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+        transform: translateY(-1px);
+      }
+
+      body.light-mode .nav-link:hover {
+        background: rgba(15, 23, 42, 0.05);
+        border-color: rgba(148, 163, 184, 0.7);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
 
       .nav-cta {
@@ -199,12 +214,104 @@
         gap: 0.4rem;
         transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease,
           background 0.18s ease;
+        white-space: nowrap;
       }
 
       .nav-cta:hover {
         transform: translateY(-1px);
         box-shadow: var(--shadow-glow);
         border-color: rgba(129, 140, 248, 0.9);
+      }
+
+      body.light-mode .nav-cta {
+        background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.08), #ffffff);
+        color: #111827;
+        border-color: rgba(148, 163, 184, 0.9);
+      }
+
+      .nav-icon-btn {
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(15, 23, 42, 0.85);
+        color: #e5e7eb;
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.18s ease;
+      }
+      .nav-icon-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+      }
+      body.light-mode .nav-icon-btn {
+        background: #ffffff;
+        color: #111827;
+        border-color: rgba(148, 163, 184, 0.8);
+      }
+
+      .burger-btn {
+        display: none;
+      }
+
+      /* Mobile menu overlay */
+      .mobile-menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 45;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .mobile-menu {
+        width: 78%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-alt);
+        border-left: 1px solid var(--border);
+        padding: 1.2rem;
+        border-radius: 1.2rem 0 0 1.2rem;
+        box-shadow: var(--shadow-soft);
+        transform: translateX(100%);
+        animation: slideIn 0.3s ease-out forwards;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      body.light-mode .mobile-menu {
+        background: #ffffff;
+      }
+
+      .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.7rem;
+      }
+
+      .mobile-menu-title {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .mobile-menu .nav-link {
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0%);
+        }
       }
 
       /* Hero */
@@ -221,8 +328,15 @@
       }
 
       @media (max-width: 900px) {
+        .hero {
+          padding: 3rem 0 2.5rem;
+        }
         .hero-grid {
           grid-template-columns: minmax(0, 1fr);
+          gap: 2rem;
+        }
+        .hero-side {
+          order: -1;
         }
       }
 
@@ -237,6 +351,12 @@
         color: var(--muted);
         font-size: 0.75rem;
         margin-bottom: 0.75rem;
+      }
+
+      body.light-mode .chip {
+        background: rgba(239, 246, 255, 0.9);
+        border-color: rgba(129, 140, 248, 0.7);
+        color: #4b5563;
       }
 
       .chip-dot {
@@ -290,6 +410,12 @@
         background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.2), #020617);
       }
 
+      body.light-mode .tag-pill {
+        background: #e5e7eb;
+        border-color: rgba(148, 163, 184, 0.9);
+        color: #111827;
+      }
+
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
@@ -339,6 +465,11 @@
         box-shadow: 0 14px 30px rgba(15, 23, 42, 0.8);
       }
 
+      body.light-mode .btn-ghost {
+        background: #ffffff;
+        color: #111827;
+      }
+
       .hero-side {
         position: relative;
         isolation: isolate;
@@ -352,6 +483,11 @@
         box-shadow: var(--shadow-soft);
         position: relative;
         overflow: hidden;
+      }
+
+      body.light-mode .hero-card {
+        background: radial-gradient(circle at top, #ffffff, #e5e7eb);
+        border-color: rgba(209, 213, 219, 0.9);
       }
 
       .hero-card::before {
@@ -381,6 +517,11 @@
         border: 1px solid rgba(30, 64, 175, 0.7);
         position: relative;
         overflow: hidden;
+      }
+
+      body.light-mode .stat-card {
+        background: #ffffff;
+        border-color: rgba(191, 219, 254, 0.9);
       }
 
       .stat-label {
@@ -413,6 +554,11 @@
         color: #e5e7eb;
       }
 
+      body.light-mode .stat-pill {
+        background: #eef2ff;
+        color: #111827;
+      }
+
       .hero-timeline {
         border-radius: 1rem;
         padding: 0.7rem 0.8rem;
@@ -427,6 +573,15 @@
 
       .hero-timeline strong {
         color: #e5e7eb;
+      }
+
+      body.light-mode .hero-timeline {
+        background: #f9fafb;
+        border-color: rgba(209, 213, 219, 0.9);
+        color: #4b5563;
+      }
+      body.light-mode .hero-timeline strong {
+        color: #111827;
       }
 
       .hero-orbit {
@@ -465,8 +620,6 @@
         right: -4px;
       }
 
-      /* Sections */
-
       section {
         padding: 3rem 0;
       }
@@ -477,6 +630,7 @@
         align-items: baseline;
         margin-bottom: 1.6rem;
         gap: 0.75rem;
+        flex-wrap: wrap;
       }
 
       .section-title {
@@ -505,8 +659,6 @@
         color: var(--muted);
       }
 
-      /* Skills */
-
       .pill-row {
         display: flex;
         flex-wrap: wrap;
@@ -527,6 +679,12 @@
         background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), #020617);
       }
 
+      body.light-mode .skill-pill {
+        background: #ffffff;
+        border-color: rgba(209, 213, 219, 0.9);
+        color: #111827;
+      }
+
       .grid-2 {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -537,12 +695,15 @@
         .grid-2 {
           grid-template-columns: minmax(0, 1fr);
         }
+        .hero-stat-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
       }
 
       .card {
         border-radius: var(--radius-lg);
         border: 1px solid rgba(30, 41, 59, 0.9);
-        background: linear-gradient(145deg, #020617, #020617, #020617, #020617, #020617);
+        background: linear-gradient(145deg, #020617, #020617);
         padding: 1rem;
         position: relative;
         overflow: hidden;
@@ -554,7 +715,11 @@
         transform: translateY(-3px);
         box-shadow: var(--shadow-soft);
         border-color: rgba(129, 140, 248, 0.9);
-        background: radial-gradient(circle at top left, #020617, #020617, #020617, #020617);
+      }
+
+      body.light-mode .card {
+        background: #ffffff;
+        border-color: rgba(209, 213, 219, 0.9);
       }
 
       .card-tagline {
@@ -581,6 +746,10 @@
         margin: 0.3rem 0 0.4rem;
         font-size: 0.8rem;
         color: #e5e7eb;
+      }
+
+      body.light-mode .card-list {
+        color: #111827;
       }
 
       .card-list li {
@@ -617,7 +786,15 @@
         background: rgba(30, 64, 175, 0.45);
       }
 
-      /* Projects */
+      body.light-mode .badge {
+        border-color: rgba(209, 213, 219, 0.9);
+        color: #4b5563;
+        background: #f3f4f6;
+      }
+      body.light-mode .badge.accent {
+        background: #e0e7ff;
+        color: #1e40af;
+      }
 
       .projects-grid {
         display: grid;
@@ -658,6 +835,11 @@
         border-color: rgba(52, 211, 153, 0.8);
       }
 
+      body.light-mode .project-card {
+        background: #ffffff;
+        border-color: rgba(209, 213, 219, 0.9);
+      }
+
       .project-label {
         font-size: 0.7rem;
         color: var(--muted);
@@ -676,6 +858,10 @@
         margin-bottom: 0.4rem;
       }
 
+      body.light-mode .project-desc {
+        color: #111827;
+      }
+
       .project-tech {
         display: flex;
         flex-wrap: wrap;
@@ -683,8 +869,6 @@
         font-size: 0.7rem;
         color: #a5b4fc;
       }
-
-      /* Contact */
 
       .contact-grid {
         display: grid;
@@ -722,6 +906,12 @@
         color: #e5e7eb;
       }
 
+      body.light-mode .contact-pill {
+        background: #ffffff;
+        border-color: rgba(209, 213, 219, 0.9);
+        color: #111827;
+      }
+
       .contact-socials {
         display: flex;
         flex-wrap: wrap;
@@ -738,11 +928,20 @@
         gap: 0.35rem;
       }
 
+      body.light-mode .contact-social-link {
+        color: #4f46e5;
+      }
+
       .contact-card {
         border-radius: var(--radius-lg);
         border: 1px solid rgba(30, 41, 59, 0.95);
         background: radial-gradient(circle at top left, #020617, #020617 55%, #020617 100%);
         padding: 1rem;
+      }
+
+      body.light-mode .contact-card {
+        background: #ffffff;
+        border-color: rgba(209, 213, 219, 0.9);
       }
 
       .contact-note {
@@ -760,11 +959,22 @@
         color: #a5b4fc;
       }
 
+      body.light-mode .availability {
+        color: #111827;
+      }
+      body.light-mode .availability strong {
+        color: #4f46e5;
+      }
+
       footer {
         border-top: 1px solid rgba(15, 23, 42, 0.9);
         padding: 1.2rem 0 1.6rem;
         font-size: 0.75rem;
         color: var(--muted);
+      }
+
+      body.light-mode footer {
+        border-top-color: rgba(209, 213, 219, 0.9);
       }
 
       .footer-inner {
@@ -774,8 +984,6 @@
         gap: 0.75rem;
         flex-wrap: wrap;
       }
-
-      /* Animations */
 
       @keyframes gradientShift {
         0% {
@@ -814,6 +1022,13 @@
         animation: float 5s ease-in-out infinite;
       }
 
+      @media (max-width: 640px) {
+        .float {
+          animation-duration: 7s;
+          transform: translateY(0);
+        }
+      }
+
       .fade-in-up {
         opacity: 0;
         transform: translateY(10px);
@@ -842,6 +1057,25 @@
       .delay-4 {
         animation-delay: 0.6s;
       }
+
+      /* Responsive navbar */
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-cta {
+          display: none;
+        }
+        .burger-btn {
+          display: inline-flex;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-title span:last-child {
+          display: none;
+        }
+      }
     </style>
   </head>
 
@@ -849,7 +1083,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const { useEffect } = React;
+      const { useEffect, useState } = React;
 
       const scrollToId = (id) => {
         const el = document.getElementById(id);
@@ -860,48 +1094,123 @@
         }
       };
 
-      const Navbar = () => {
+      const Navbar = ({ theme, setTheme }) => {
+        const [menuOpen, setMenuOpen] = useState(false);
+        const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
+        const handleNavClick = (id) => {
+          scrollToId(id);
+          setMenuOpen(false);
+        };
+
         return (
-          <header>
-            <div className="container">
-              <nav className="nav">
-                <div className="nav-left">
-                  <div className="nav-logo">HB</div>
-                  <div className="nav-title">
-                    <span>Hamza Ben Alouane</span>
-                    <span>Développeur Web & Mobile – Bac+3</span>
+          <>
+            <header>
+              <div className="container">
+                <nav className="nav">
+                  <div className="nav-left">
+                    <div className="nav-logo">HB</div>
+                    <div className="nav-title">
+                      <span>Hamza Ben Alouane</span>
+                      <span>Développeur Web & Mobile – Bac+3</span>
+                    </div>
                   </div>
-                </div>
-                <div className="nav-links">
-                  <button className="nav-link" onClick={() => scrollToId("about")}>
+
+                  <div className="nav-links">
+                    <button className="nav-link" onClick={() => handleNavClick("about")}>
+                      À propos
+                    </button>
+                    <button className="nav-link" onClick={() => handleNavClick("skills")}>
+                      Compétences
+                    </button>
+                    <button className="nav-link" onClick={() => handleNavClick("experience")}>
+                      Expériences
+                    </button>
+                    <button className="nav-link" onClick={() => handleNavClick("projects")}>
+                      Projets
+                    </button>
+                    <button className="nav-link" onClick={() => handleNavClick("contact")}>
+                      Contact
+                    </button>
+                  </div>
+
+                  <div className="nav-actions">
+                    <button className="nav-icon-btn" onClick={toggleTheme} aria-label="Changer de thème">
+                      {theme === "light" ? (
+                        <i className="fa-solid fa-moon"></i>
+                      ) : (
+                        <i className="fa-solid fa-sun"></i>
+                      )}
+                    </button>
+                    <button className="nav-cta" onClick={() => handleNavClick("contact")}>
+                      <i className="fa-solid fa-paper-plane"></i>
+                      Me contacter
+                    </button>
+                    <button
+                      className="nav-icon-btn burger-btn"
+                      onClick={() => setMenuOpen((prev) => !prev)}
+                      aria-label="Menu mobile"
+                    >
+                      {menuOpen ? (
+                        <i className="fa-solid fa-xmark"></i>
+                      ) : (
+                        <i className="fa-solid fa-bars"></i>
+                      )}
+                    </button>
+                  </div>
+                </nav>
+              </div>
+            </header>
+
+            {menuOpen && (
+              <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}>
+                <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+                  <div className="mobile-menu-header">
+                    <div className="mobile-menu-title">Navigation</div>
+                    <button
+                      className="nav-icon-btn"
+                      onClick={() => setMenuOpen(false)}
+                      aria-label="Fermer le menu"
+                    >
+                      <i className="fa-solid fa-xmark"></i>
+                    </button>
+                  </div>
+                  <button className="nav-link" onClick={() => handleNavClick("about")}>
                     À propos
                   </button>
-                  <button className="nav-link" onClick={() => scrollToId("skills")}>
+                  <button className="nav-link" onClick={() => handleNavClick("skills")}>
                     Compétences
                   </button>
-                  <button className="nav-link" onClick={() => scrollToId("experience")}>
+                  <button className="nav-link" onClick={() => handleNavClick("experience")}>
                     Expériences
                   </button>
-                  <button className="nav-link" onClick={() => scrollToId("projects")}>
+                  <button className="nav-link" onClick={() => handleNavClick("projects")}>
                     Projets
                   </button>
-                  <button className="nav-link" onClick={() => scrollToId("contact")}>
+                  <button className="nav-link" onClick={() => handleNavClick("contact")}>
                     Contact
                   </button>
+                  <button className="nav-link" onClick={toggleTheme}>
+                    {theme === "light" ? (
+                      <>
+                        <i className="fa-solid fa-moon"></i> Passer en mode sombre
+                      </>
+                    ) : (
+                      <>
+                        <i className="fa-solid fa-sun"></i> Passer en mode clair
+                      </>
+                    )}
+                  </button>
                 </div>
-                <button className="nav-cta" onClick={() => scrollToId("contact")}>
-                  <i className="fa-solid fa-paper-plane"></i>
-                  Me contacter
-                </button>
-              </nav>
-            </div>
-          </header>
+              </div>
+            )}
+          </>
         );
       };
 
       const Hero = () => {
         return (
-          <section className="hero">
+          <section className="hero" id="about">
             <div className="container">
               <div className="hero-grid">
                 <div className="fade-in-up">
@@ -924,7 +1233,11 @@
                     <span className="tag-pill">React · Symfony · Flutter</span>
                   </div>
                   <div className="hero-actions">
-                    <a href="#contact" className="btn-primary" onClick={(e) => (e.preventDefault(), scrollToId("contact"))}>
+                    <a
+                      href="#contact"
+                      className="btn-primary"
+                      onClick={(e) => (e.preventDefault(), scrollToId("contact"))}
+                    >
                       <i className="fa-solid fa-paper-plane"></i>
                       Discutons de votre projet
                     </a>
@@ -976,7 +1289,13 @@
                         <div className="orbit-dot"></div>
                       </div>
                       <div className="orbit-circle">
-                        <div className="orbit-dot" style={{ background: "#6366f1", boxShadow: "0 0 14px rgba(99,102,241,0.9)" }}></div>
+                        <div
+                          className="orbit-dot"
+                          style={{
+                            background: "#6366f1",
+                            boxShadow: "0 0 14px rgba(99,102,241,0.9)",
+                          }}
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -988,24 +1307,8 @@
       };
 
       const SkillsSection = () => {
-        const languages = [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "TypeScript",
-          "PHP",
-          "Java",
-          "C#",
-          "Dart",
-        ];
-        const frameworks = [
-          "React.js",
-          "Vue.js",
-          "Symfony",
-          "Flutter",
-          "Tailwind CSS",
-          "Unity",
-        ];
+        const languages = ["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "Java", "C#", "Dart"];
+        const frameworks = ["React.js", "Vue.js", "Symfony", "Flutter", "Tailwind CSS", "Unity"];
         const db = ["MySQL", "MongoDB", "Firebase"];
         const tools = ["Git", "Linux", "Android Studio", "Canva", "WordPress", "Docker"];
         const methods = ["Agile Scrum", "Architecture MVC", "Algorithmie"];
@@ -1144,6 +1447,7 @@
                   <span>
                     <i className="fa-solid fa-briefcase"></i>
                   </span>
+                  Expériences
                 </h2>
                 <p className="section-subtitle">
                   Des expériences variées, orientées web, association & entreprise.
@@ -1188,108 +1492,109 @@
       };
 
       const ProjectsSection = () => {
-  const projects = [
-    {
-      name: "Dex Token",
-      label: "Projet full stack – +1 an de développement",
-      desc: "Plateforme avancée autour des cryptomonnaies, intégrant dashboard, API, suivi de tokens, interface utilisateur moderne et automatisations. Projet en évolution permanente.",
-      tech: ["JavaScript", "React", "Node.js", "API REST", "UI/UX"],
-      link: "https://www.dex-token.com/"
-    },
-    {
-      name: "Scanner d'Amiibo NFC",
-      label: "Application Android – NFC",
-      desc: "Application mobile permettant de scanner des Amiibo via NFC, récupérer leurs données, afficher les informations clés et gérer une collection numérique.",
-      tech: ["Java", "Android Studio", "NFC", "JSON"]
-    },
-    {
-      name: "Application Quiz Musical",
-      label: "Application mobile Android",
-      desc: "Jeu de quiz musical avec plusieurs niveaux de difficulté et mode Time Attack.",
-      tech: ["Java", "Android Studio"]
-    },
-    {
-      name: "Application Flutter – Passion Licornes",
-      label: "Application mobile Flutter",
-      desc: "Application pour passionnés, avec fiches, concours et notifications.",
-      tech: ["Flutter", "Firebase"]
-    },
-    {
-      name: "Jeu 2D – Speedrunners-like",
-      label: "Jeu vidéo 2D Unity",
-      desc: "Création de cartes, gameplay, suivi caméra, systèmes d’animation.",
-      tech: ["C#", "Unity"]
-    }
-  ];
+        const projects = [
+          {
+            name: "Dex Token",
+            label: "Projet full stack – +1 an de développement",
+            desc: "Plateforme avancée autour des cryptomonnaies, intégrant dashboard, API, suivi de tokens, interface utilisateur moderne et automatisations. Projet en évolution permanente.",
+            tech: ["JavaScript", "React", "Node.js", "API REST", "UI/UX"],
+            link: "https://www.dex-token.com/",
+          },
+          {
+            name: "Scanner d'Amiibo NFC",
+            label: "Application Android – NFC",
+            desc: "Application mobile permettant de scanner des Amiibo via NFC, récupérer leurs données, afficher les informations clés et gérer une collection numérique.",
+            tech: ["Java", "Android Studio", "NFC", "JSON"],
+          },
+          {
+            name: "Application Quiz Musical",
+            label: "Application mobile Android",
+            desc: "Jeu de quiz musical avec plusieurs niveaux de difficulté et mode Time Attack.",
+            tech: ["Java", "Android Studio"],
+          },
+          {
+            name: "Application Flutter – Passion Licornes",
+            label: "Application mobile Flutter",
+            desc: "Application pour passionnés, avec fiches, concours et notifications.",
+            tech: ["Flutter", "Firebase"],
+          },
+          {
+            name: "Jeu 2D – Speedrunners-like",
+            label: "Jeu vidéo 2D Unity",
+            desc: "Création de cartes, gameplay, suivi caméra, systèmes d’animation.",
+            tech: ["C#", "Unity"],
+          },
+        ];
 
-  return (
-    <section id="projects">
-      <div className="container">
-        <div className="section-header fade-in-up">
-          <h2 className="section-title">
-            <span>
-              <i className="fa-solid fa-gamepad"></i>
-            </span>
-            Projets notables
-          </h2>
-          <p className="section-subtitle">
-            Une sélection de projets professionnels, personnels et académiques.
-          </p>
-        </div>
-
-        <div className="projects-grid fade-in-up delay-1">
-          {projects.map((p) => (
-            <div key={p.name} className="project-card">
-              <div>
-                <div className="project-label">{p.label}</div>
-                <div className="project-title">{p.name}</div>
-                <div className="project-desc">{p.desc}</div>
+        return (
+          <section id="projects">
+            <div className="container">
+              <div className="section-header fade-in-up">
+                <h2 className="section-title">
+                  <span>
+                    <i className="fa-solid fa-gamepad"></i>
+                  </span>
+                  Projets notables
+                </h2>
+                <p className="section-subtitle">
+                  Une sélection de projets professionnels, personnels et académiques.
+                </p>
               </div>
 
-              <div className="project-tech">
-                {p.tech.map((t) => (
-                  <span key={t}>#{t}</span>
+              <div className="projects-grid fade-in-up delay-1">
+                {projects.map((p) => (
+                  <div key={p.name} className="project-card">
+                    <div>
+                      <div className="project-label">{p.label}</div>
+                      <div className="project-title">{p.name}</div>
+                      <div className="project-desc">{p.desc}</div>
+                    </div>
+
+                    <div className="project-tech">
+                      {p.tech.map((t) => (
+                        <span key={t}>#{t}</span>
+                      ))}
+                    </div>
+
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{ textDecoration: "none", marginTop: "0.4rem", color: "#a5b4fc" }}
+                      >
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i> Voir le projet
+                      </a>
+                    )}
+                  </div>
                 ))}
-              </div>
 
-              {p.link && (
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ textDecoration: "none", marginTop: "0.4rem", color: "#a5b4fc" }}
-                >
-                  <i className="fa-solid fa-arrow-up-right-from-square"></i> Voir le projet
-                </a>
-              )}
-            </div>
-          ))}
-
-          {/* GitHub section */}
-          <div className="project-card">
-            <div>
-              <div className="project-label">GitHub</div>
-              <div className="project-title">Autres projets & expérimentations</div>
-              <div className="project-desc">
-                Vous pouvez retrouver d'autres projets, prototypes et exercices sur mon GitHub :
+                <div className="project-card">
+                  <div>
+                    <div className="project-label">GitHub</div>
+                    <div className="project-title">Autres projets & expérimentations</div>
+                    <div className="project-desc">
+                      Vous pouvez retrouver d&apos;autres projets, prototypes et exercices sur mon
+                      GitHub :
+                    </div>
+                  </div>
+                  <div className="project-tech">
+                    <a
+                      href="https://github.com/ComiccSanss2"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none", color: "#a5b4fc" }}
+                    >
+                      <i className="fa-brands fa-github"></i> ComiccSanss2
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="project-tech">
-              <a
-                href="https://github.com/ComiccSanss2"
-                target="_blank"
-                rel="noreferrer"
-                style={{ textDecoration: "none", color: "#a5b4fc" }}
-              >
-                <i className="fa-brands fa-github"></i> ComiccSanss2
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+          </section>
+        );
+      };
+
       const ContactSection = () => {
         return (
           <section id="contact">
@@ -1399,13 +1704,32 @@
       );
 
       const App = () => {
+        const [theme, setTheme] = useState("dark");
+
+        useEffect(() => {
+          const saved = localStorage.getItem("theme");
+          if (saved === "light") {
+            setTheme("light");
+            document.body.classList.add("light-mode");
+          }
+        }, []);
+
+        useEffect(() => {
+          if (theme === "light") {
+            document.body.classList.add("light-mode");
+          } else {
+            document.body.classList.remove("light-mode");
+          }
+          localStorage.setItem("theme", theme);
+        }, [theme]);
+
         useEffect(() => {
           window.scrollTo(0, 0);
         }, []);
 
         return (
           <div className="app-root">
-            <Navbar />
+            <Navbar theme={theme} setTheme={setTheme} />
             <Hero />
             <SkillsSection />
             <ExperienceSection />
