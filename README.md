@@ -28,3 +28,18 @@ Il présente mon parcours, mes compétences techniques, mes projets, et mes coor
 
 ## Structure du projet
 
+
+Tout le portfolio fonctionne dans un seul fichier HTML grâce à React CDN.
+
+---
+
+## 📦 Installation locale
+
+1. Clone le projet :
+
+```bash
+git clone https://github.com/ComiccSanss2/Portfolio.git
+
+open index.html   # macOS
+
+start index.html  # Windows
