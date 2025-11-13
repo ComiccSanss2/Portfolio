@@ -1,45 +1,71 @@
-# 🌐 Portfolio – Hamza Ben Alouane
+🌐 Portfolio – Hamza Ben Alouane
 
-Bienvenue sur mon portfolio personnel, développé en **React (version CDN)** dans un fichier unique `index.html`.  
-Il présente mon parcours, mes compétences techniques, mes projets, et mes coordonnées.
+Bienvenue sur mon portfolio personnel, développé en HTML / CSS / JavaScript + React (version CDN).
+Il présente mon parcours, mes compétences techniques, mes expériences et mes projets, dans un design moderne, fluide et entièrement responsive.
 
----
+🚀 Fonctionnalités principales
 
-## Fonctionnalités
+🌓 Mode clair & sombre
 
-- Mode **clair / sombre** avec sauvegarde automatique du thème  
-- Sections : À propos, Compétences, Expériences, Projets, Contact  
-- Animations légères et design moderne  
-- Layout responsive (mobile / desktop)  
-- Projets interactifs avec liens externes  
-- Développement 100% client-side (pas besoin de backend)
+Basculable via un bouton
 
----
+Sauvegarde automatique du thème choisi
 
-## Technologies utilisées
+Palette cohérente + lisibilité optimisée dans les deux modes
 
-- **React 18** (CDN)  
-- **Babel**  
-- **HTML / CSS / JavaScript**  
-- **Font Awesome**  
-- **Google Fonts (Poppins)**  
+📱 Responsive complet
 
----
+Version mobile optimisée
 
-## Structure du projet
+Menu hamburger animé (slide-in)
 
+Animations légères adaptées aux petits écrans
 
-Tout le portfolio fonctionne dans un seul fichier HTML grâce à React CDN.
+🎨 UI / UX travaillée
 
----
+Animations douces (fade, slide, hover)
 
-## 📦 Installation locale
+Layout harmonisé
 
-1. Clone le projet :
+Images de projets intégrées (Dex Token, Amiibo Scanner, Sanic)
 
-```bash
-git clone https://github.com/ComiccSanss2/Portfolio.git
+💼 Sections
 
-open index.html   # macOS
+À propos
 
-start index.html  # Windows
+Compétences (avec badges, catégories, niveaux mis en avant)
+
+Expériences professionnelles & projets d’école
+
+Projets personnels / académiques
+
+Contact (email, téléphone, réseaux)
+
+🛠️ Technologies utilisées
+
+React 18 (CDN) + JSX via Babel
+
+HTML5 / CSS3 / JavaScript
+
+Font Awesome (icônes)
+
+Google Fonts – Poppins
+
+Images projet dans /assets/
+
+📁 Structure du projet
+Portfolio/
+│
+├── index.html          
+│
+├── styles/
+│   ├── styles.css         
+│
+├── scripts/
+│   ├── app.js               
+│
+└── assets/
+    ├── dex-token.png
+    ├── amiibo.png
+    ├── sanic.png
+    
