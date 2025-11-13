@@ -1,71 +1,32 @@
 🌐 Portfolio – Hamza Ben Alouane
 
-Bienvenue sur mon portfolio personnel, développé en HTML / CSS / JavaScript + React (version CDN).
-Il présente mon parcours, mes compétences techniques, mes expériences et mes projets, dans un design moderne, fluide et entièrement responsive.
+Portfolio personnel développé en HTML / CSS / JavaScript + React (CDN).
+Il regroupe mon parcours, mes compétences techniques, mes projets, et mes informations de contact.
 
-🚀 Fonctionnalités principales
+✨ Fonctionnalités
 
-🌓 Mode clair & sombre
+Version 100% responsive (mobile / tablette / desktop)
 
-Basculable via un bouton
+Menu hamburger animé pour mobile
 
-Sauvegarde automatique du thème choisi
+Mode clair & sombre 
 
-Palette cohérente + lisibilité optimisée dans les deux modes
+Animations légères et fluides
 
-📱 Responsive complet
+Sections structurées : About, Skills, Experience, Projects, Contact
 
-Version mobile optimisée
+Screenshots intégrés pour certains projets (Dex Token, Amiibo, Sanic…)
 
-Menu hamburger animé (slide-in)
+Développement full client-side (aucune installation nécessaire)
 
-Animations légères adaptées aux petits écrans
+🛠️ Technologies
 
-🎨 UI / UX travaillée
+React 18 (CDN)
 
-Animations douces (fade, slide, hover)
+Babel (JSX)
 
-Layout harmonisé
+HTML / CSS / JavaScript
 
-Images de projets intégrées (Dex Token, Amiibo Scanner, Sanic)
-
-💼 Sections
-
-À propos
-
-Compétences (avec badges, catégories, niveaux mis en avant)
-
-Expériences professionnelles & projets d’école
-
-Projets personnels / académiques
-
-Contact (email, téléphone, réseaux)
-
-🛠️ Technologies utilisées
-
-React 18 (CDN) + JSX via Babel
-
-HTML5 / CSS3 / JavaScript
-
-Font Awesome (icônes)
+Font Awesome
 
 Google Fonts – Poppins
-
-Images projet dans /assets/
-
-📁 Structure du projet
-Portfolio/
-│
-├── index.html          
-│
-├── styles/
-│   ├── styles.css         
-│
-├── scripts/
-│   ├── app.js               
-│
-└── assets/
-    ├── dex-token.png
-    ├── amiibo.png
-    ├── sanic.png
-    
