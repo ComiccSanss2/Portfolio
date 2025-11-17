@@ -405,11 +405,12 @@ const ProjectsSection = () => {
     },
 
     {
-      name: "Scanner d'Amiibo NFC",
-      label: "Application Android",
-      desc: "Application Android qui scanne des Amiibo via NFC, lit leurs données et gère une collection locale.",
-      tech: ["Kotlin", "Android Studio", "NFC", "JSON"],
-      image: "./assets/amiibo.png",
+      name: "Pixeno",
+      label: "Web App",
+      desc: "Un gestionnaire de tilesets rapide et au style rétro, développé avec React.",
+      tech: ["React", "Vite", "JavaScript", "CSS"],
+      link: "https://comiccsanss2.github.io/tileset-manager/",
+      image: "./assets/pixeno.png",
     },
 
    {
@@ -422,10 +423,11 @@ const ProjectsSection = () => {
 },
 
     {
-      name: "Quiz Musical",
+      name: "Scanner Amiibo NFC",
       label: "Application Android",
-      desc: "Jeu de quiz musical avec plusieurs niveaux de difficulté, un chronomètre et un scoring dynamique.",
-      tech: ["Java", "Android Studio"],
+      desc: "Application Android qui scanne des Amiibo via NFC, lit leurs données et gère une collection locale.",
+      tech: ["Kotlin", "Android Studio", "NFC", "JSON"],
+      image: "./assets/amiibo.png",
     },
 
     {

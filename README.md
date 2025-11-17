@@ -53,19 +53,4 @@ Google Fonts – Poppins
 
 Images projet dans /assets/
 
-📁 Structure du projet
-Portfolio/
-│
-├── index.html          
-│
-├── styles/
-│   ├── styles.css         
-│
-├── scripts/
-│   ├── app.js               
-│
-└── assets/
-    ├── dex-token.png
-    ├── amiibo.png
-    ├── sanic.png
     
