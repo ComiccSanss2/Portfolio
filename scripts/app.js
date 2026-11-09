@@ -72,6 +72,9 @@ const PROJECTS = [
       "traversent Subnet, la ville sous la ville, où l'on « hacke » les émotions au lieu de combattre. Jeu traduit en anglais, italien et français.",
     tech: ["C#", "Unity 6", "URP", "HLSL"],
     repo: "https://github.com/ComiccSanss2/night-train-zero",
+    live: "https://comiccsanss.itch.io/night-train-zero",
+    liveLabel: "Jouer sur itch.io",
+    liveIcon: "fa-brands fa-itch-io",
   },
   {
     name: "Ashes of the Throne",
@@ -82,6 +85,9 @@ const PROJECTS = [
       "(sans ouvrir de ports grâce à Unity Relay) et génération des scènes, matériaux et animations par scripts d'éditeur.",
     tech: ["C#", "Unity 6", "Netcode for GameObjects", "URP"],
     repo: "https://github.com/ComiccSanss2/ASHES-OF-THRONE",
+    live: "https://comiccsanss.itch.io/ashes-of-the-throne",
+    liveLabel: "Jouer sur itch.io",
+    liveIcon: "fa-brands fa-itch-io",
   },
 ];
 
@@ -417,7 +423,7 @@ const ProjectLinks = ({ p }) => (
   <div className="project-links">
     {p.live && (
       <a href={p.live} target="_blank" rel="noreferrer" className="project-link primary">
-        <i className={p.liveLabel ? "fa-solid fa-download" : "fa-solid fa-arrow-up-right-from-square"}></i>
+        <i className={p.liveIcon || (p.liveLabel ? "fa-solid fa-download" : "fa-solid fa-arrow-up-right-from-square")}></i>
         {p.liveLabel || "Voir en ligne"}
       </a>
     )}
