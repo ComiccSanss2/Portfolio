@@ -2,10 +2,20 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Portfolio – Hamza Ben Alouane</title>
+    <title>Hamza Ben Alouane · Développeur Web Full Stack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio de Hamza Ben Alouane, développeur web full stack (Bac+3), disponible en CDI ou freelance. React, Node.js, TypeScript, WebRTC, jeux vidéo."
+    />
+    <meta property="og:title" content="Hamza Ben Alouane · Développeur Web Full Stack" />
+    <meta property="og:description" content="Développeur full stack Bac+3, disponible en CDI ou freelance. Projets : PelakaVoice, PIXENO, Visual Simulator…" />
+    <meta property="og:image" content="https://comiccsanss2.github.io/Portfolio/assets/pelakavoice.webp" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%236366f1'/><text x='32' y='42' font-size='28' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>HB</text></svg>" />
 
     <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -21,18 +31,20 @@
     />
 
     <!-- Styles -->
-<link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/extra.css" />
 
-    <!-- React + Babel -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- React (production) + Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
 
   <body>
     <div id="root"></div>
+    <noscript>Hamza Ben Alouane · Développeur Web Full Stack (Bac+3), disponible en CDI ou freelance · hbenalouane19@gmail.com</noscript>
 
     <!-- App React -->
-<script src="./scripts/app.js" type="text/babel"></script>
+    <script src="./scripts/app.js" type="text/babel"></script>
   </body>
 </html>

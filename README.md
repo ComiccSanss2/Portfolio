@@ -1,56 +1,28 @@
-🌐 Portfolio – Hamza Ben Alouane
+# 🌐 Portfolio – Hamza Ben Alouane
 
-Bienvenue sur mon portfolio personnel, développé en HTML / CSS / JavaScript + React (version CDN).
-Il présente mon parcours, mes compétences techniques, mes expériences et mes projets, dans un design moderne, fluide et entièrement responsive.
+Développeur web **full stack** · **Bac+3** (Développement Web et Mobile, ESIEE-IT, 2026) · disponible en **CDI ou freelance**.
 
-🚀 Fonctionnalités principales
+👉 **En ligne : https://comiccsanss2.github.io/Portfolio**
 
-🌓 Mode clair & sombre
+## Contenu
 
-Basculable via un bouton
+- **À propos** : profil, diplôme, type de poste recherché (CDI / freelance), CV à télécharger
+- **Projets** : les projets mis en avant sur mon GitHub
+  - **PelakaVoice** : application de chat vocal type Discord (Electron, WebRTC, Node.js, Socket.io)
+  - **PIXENO** : outil web de préparation de tilesets (React, Vite)
+  - **Visual Simulator** : expérience WebGL procédurale pilotée par le scroll (Three.js, GLSL)
+  - **Night Train Zero** : RPG narratif isométrique (Unity 6)
+  - **Ashes of the Throne** : action-RPG dark fantasy en coopération en ligne (Unity 6, Netcode)
+  - et d'autres : Amstramgram, supermarché en réalité virtuelle, applications mobiles, jeux itch.io
+- **Compétences**, **parcours** (expériences, formation, engagement associatif) et **contact**
 
-Sauvegarde automatique du thème choisi
+## Fonctionnalités
 
-Palette cohérente + lisibilité optimisée dans les deux modes
+- Mode clair / sombre mémorisé
+- Responsive (menu mobile)
+- Animations d'apparition au scroll (désactivées si l'utilisateur préfère réduire les animations)
+- Images optimisées en WebP
 
-📱 Responsive complet
+## Technologies
 
-Version mobile optimisée
-
-Menu hamburger animé (slide-in)
-
-Animations légères adaptées aux petits écrans
-
-🎨 UI / UX travaillée
-
-Animations douces (fade, slide, hover)
-
-Layout harmonisé
-
-Images de projets intégrées (Dex Token, Amiibo Scanner, Sanic)
-
-💼 Sections
-
-À propos
-
-Compétences (avec badges, catégories, niveaux mis en avant)
-
-Expériences professionnelles & projets d’école
-
-Projets personnels / académiques
-
-Contact (email, téléphone, réseaux)
-
-🛠️ Technologies utilisées
-
-React 18 (CDN) + JSX via Babel
-
-HTML5 / CSS3 / JavaScript
-
-Font Awesome (icônes)
-
-Google Fonts – Poppins
-
-Images projet dans /assets/
-
-    
+React 18 (CDN) + JSX via Babel · HTML5 / CSS3 / JavaScript · Font Awesome · Google Fonts (Poppins) · hébergé sur GitHub Pages
